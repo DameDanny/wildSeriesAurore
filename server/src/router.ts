@@ -24,6 +24,14 @@ router.get("/", sayAction.sayWelcome);
 import programActions from "./modules/item/program/programActions";
 
 router.get("/api/programs", programActions.browse);
+router.get("/api/programs/:id", programActions.read);
+
+/* ************************************************************************* */
+
+import categoryActions from "./modules/category/categoryActions";
+
+router.get("/api/categories", categoryActions.browseCategory);
+router.get("/api/categories/:id", categoryActions.readCategory);
 
 /* ************************************************************************* */
 
