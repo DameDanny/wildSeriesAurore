@@ -32,6 +32,9 @@ import categoryActions from "./modules/category/categoryActions";
 
 router.get("/api/categories", categoryActions.browseCategory);
 router.get("/api/categories/:id", categoryActions.readCategory);
+router.get("/api/categories/:id", categoryActions.edit);
+router.post("/api/categories", categoryActions.add);
+router.delete("/api/categories/:id", categoryActions.destroy);
 
 /* ************************************************************************* */
 

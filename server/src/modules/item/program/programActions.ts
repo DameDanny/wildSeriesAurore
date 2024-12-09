@@ -10,6 +10,7 @@ const programs = [
       "https://img.betaseries.com/JwRqyGD3f9KvO_OlfIXHZUA3Ypw=/600x900/smart/https%3A%2F%2Fpictures.betaseries.com%2Ffonds%2Fposter%2F94857341d71c795c69b9e5b23c4bf3e7.jpg",
     country: "USA",
     year: 2016,
+    program_id: 1,
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ const programs = [
       "https://img.betaseries.com/zDxfeFudy3HWjxa6J8QIED9iaVw=/600x900/smart/https%3A%2F%2Fpictures.betaseries.com%2Ffonds%2Fposter%2Fc47135385da176a87d0dd9177c5f6a41.jpg",
     country: "Allemagne",
     year: 2017,
+    program_id: 2,
   },
 ];
 
