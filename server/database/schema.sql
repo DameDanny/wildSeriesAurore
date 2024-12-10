@@ -20,10 +20,10 @@ create table program (
   id int unsigned primary key auto_increment not null,
   title varchar(255) not null,
   synopsis varchar(500) not null,
-  poster varchar(255) not null,
-  country varchar(255) not null,
-  year_program int not null,
-  category_id int unsigned not null,
+  poster varchar(255) ,
+  country varchar(255) ,
+  year_program int ,
+  category_id int unsigned ,
   foreign key(category_id) references category(id)
 );
 
