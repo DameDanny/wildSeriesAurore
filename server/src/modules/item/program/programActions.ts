@@ -114,6 +114,41 @@ const destroy: RequestHandler = async (req, res, next) => {
 	}
 };
 
+const validate: RequestHandler = async (req, res, next) => {
+	type ValidationError = {
+		field: string;
+		message: string;
+	};
+
+	const errors: ValidationError[] = [];
+	const { title } = req.body.title;
+	const { synopsis } = req.body.synopsis;
+
+	// put your validation rules here
+	if (title == null) {
+		errors.push({ field: "title", message: "The field is required" });
+	} else if (title.length > 255) {
+		errors.push({
+			field: "title",
+			message: "Should contain less than 255 characters",
+		});
+	}
+	if (synopsis == null) {
+		errors.push({ field: "synopsis", message: "The field is required" });
+	} else if (synopsis.length > 255) {
+		errors.push({
+			field: "synopsis",
+			message: "Should contain less than 255 characters",
+		});
+	}
+
+	if (errors.length === 0) {
+		next();
+	} else {
+		res.status(400).json({ validationErrors: errors });
+	}
+};
+
 // Export it to import it somewhere else
 
-export default { browse, read, edit, add, destroy };
+export default { browse, read, edit, add, destroy, validate };
